@@ -9,11 +9,12 @@ interface Props {
 
 const TodoTask = ({ task }: Props) => {
   return (
-    <div>
-      <div>
-        <div>{task.taskName}</div>
-        <div>{task.deadline}</div>
+    <div className="task">
+      <div className="content">
+        <span>{task.taskName}</span>
+        <span>{task.deadline}</span>
       </div>
+      <button>X</button>
     </div>
   );
 };
