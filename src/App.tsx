@@ -15,6 +15,13 @@ const App: FC = () => {
       setDeadline(Number(event.target.value));
     }
   };
+
+  const addTask = (): void => {
+    // newTask-object created because otherwise error:
+    // "Type 'string' is not assignable to type 'ITask'." ...for 'task' in setTodoList
+    const newTask = { taskName: task, deadline: deadline };
+    setTodoList([...todoList, newTask]);
+  };
   return (
     <div className="App">
       <div className="header">
