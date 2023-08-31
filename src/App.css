@@ -6,3 +6,13 @@
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.header{
+  /* flex: 30% --> flexbox-content takes up only 30% of the screen */
+  flex: 30%;
+  background-color: tomato;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
