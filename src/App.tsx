@@ -1,12 +1,14 @@
 import React, { FC, ChangeEvent, useState } from "react";
 import "./App.css";
+import { ITask } from "./Interfaces";
 
 const App: FC = () => {
   const [task, setTask] = useState<string>("");
   const [deadline, setDeadline] = useState<number>(0);
-  const [todo, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState<ITask[]>([]);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  // ...:void -> return-type of a function that doesnt return anything
+  const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     if (event.target.name === "task") {
       setTask(event.target.value);
     } else {
