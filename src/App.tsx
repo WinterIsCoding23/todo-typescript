@@ -6,7 +6,13 @@ const App: FC = () => {
   const [deadline, setDeadline] = useState<number>(0);
   const [todo, setTodoList] = useState([]);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {};
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.name === "task") {
+      setTask(event.target.value);
+    } else {
+      setDeadline(Number(event.target.value));
+    }
+  };
   return (
     <div className="App">
       <div className="header">
@@ -14,11 +20,13 @@ const App: FC = () => {
           <input
             type="text"
             placeholder="Task..."
+            name="task"
             onChange={handleChange}
           ></input>
           <input
             type="number"
             placeholder="Deadline (in Days)..."
+            name="deadline"
             onChange={handleChange}
           ></input>
         </div>
