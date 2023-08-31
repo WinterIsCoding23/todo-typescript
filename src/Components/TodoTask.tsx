@@ -1,7 +1,21 @@
 import React from "react";
+import { ITask } from "../Interfaces";
 
-const TodoTask = () => {
-  return <div>task</div>;
+interface Props {
+  // '?' marks an optional prop
+  // task?: ITask;
+  task: ITask;
+}
+
+const TodoTask = ({ task }: Props) => {
+  return (
+    <div>
+      <div>
+        <div>{task.taskName}</div>
+        <div>{task.deadline}</div>
+      </div>
+    </div>
+  );
 };
 
 export default TodoTask;
