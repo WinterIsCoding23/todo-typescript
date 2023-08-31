@@ -21,6 +21,9 @@ const App: FC = () => {
     // "Type 'string' is not assignable to type 'ITask'." ...for 'task' in setTodoList
     const newTask = { taskName: task, deadline: deadline };
     setTodoList([...todoList, newTask]);
+    console.log(newTask);
+    setTask("");
+    setDeadline(0);
   };
   return (
     <div className="App">
@@ -30,16 +33,18 @@ const App: FC = () => {
             type="text"
             placeholder="Task..."
             name="task"
+            value={task}
             onChange={handleChange}
           ></input>
           <input
             type="number"
             placeholder="Deadline (in Days)..."
             name="deadline"
+            value={deadline}
             onChange={handleChange}
           ></input>
         </div>
-        <button>Add Task</button>
+        <button onClick={addTask}>Add Task</button>
       </div>
       <div className="todoList"></div>
     </div>
